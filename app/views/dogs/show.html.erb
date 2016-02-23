@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Dob:</strong>
-  <%= @dog.dob %>
+  <strong>Date of Birth:</strong>
+  <%= @dog.dob.stamp('February 14, 2015') %>
 </p>
 
 <p>
   <strong>Breed:</strong>
-  <%= @dog.breed %>
+  <%= @dog.breed.try(:name) %>
 </p>
 
 <p>
@@ -22,12 +22,12 @@
 
 <p>
   <strong>Vet:</strong>
-  <%= @dog.vet %>
+  <%= @dog.vet.try(:doctor) %>
 </p>
 
 <p>
   <strong>In daycare:</strong>
-  <%= @dog.in_daycare %>
+  <%= @dog.in_daycare ? 'yes' : 'no' %>
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
